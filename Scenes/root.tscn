@@ -20,6 +20,10 @@ texture = ExtResource("2_yapcx")
 [node name="ClamPlayer" parent="." instance=ExtResource("1_w3yk3")]
 position = Vector2(572, 307)
 
+[node name="Crab" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_4847l")]
+position = Vector2(830, 408)
+target = NodePath("../ClamPlayer")
+
 [node name="WorldBorder" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorder"]
@@ -37,5 +41,3 @@ shape = SubResource("RectangleShape2D_e0uch")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="WorldBorder"]
 position = Vector2(570, 681)
 shape = SubResource("RectangleShape2D_iix8n")
-
-[node name="Crab" parent="." instance=ExtResource("3_4847l")]
