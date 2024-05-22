@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://7dx85tyoxg1o"]
+
+[ext_resource type="PackedScene" uid="uid://suod22dv6581" path="res://Scenes/Player.tscn" id="1_w3yk3"]
+[ext_resource type="Texture2D" uid="uid://8q2c3ubteu27" path="res://Sprites/ground2.jpg" id="2_yapcx"]
+[ext_resource type="PackedScene" uid="uid://edxff0wwpd0m" path="res://Scenes/crab.tscn" id="3_4847l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iix8n"]
+size = Vector2(1272, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0uch"]
+size = Vector2(148.5, 740.5)
+
+[node name="Root" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(593, 337)
+scale = Vector2(1.89375, 1.43333)
+texture = ExtResource("2_yapcx")
+
+[node name="ClamPlayer" parent="." instance=ExtResource("1_w3yk3")]
+position = Vector2(572, 307)
+
+[node name="WorldBorder" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorder"]
+position = Vector2(583, -32)
+shape = SubResource("RectangleShape2D_iix8n")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldBorder"]
+position = Vector2(1227, 369)
+shape = SubResource("RectangleShape2D_e0uch")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="WorldBorder"]
+position = Vector2(-76, 358)
+shape = SubResource("RectangleShape2D_e0uch")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="WorldBorder"]
+position = Vector2(570, 681)
+shape = SubResource("RectangleShape2D_iix8n")
+
+[node name="Crab" parent="." instance=ExtResource("3_4847l")]

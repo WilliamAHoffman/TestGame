@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://edxff0wwpd0m"]
+
+[node name="Crab" type="CharacterBody2D"]
