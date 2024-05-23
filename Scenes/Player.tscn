@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://suod22dv6581"]
+[gd_scene load_steps=6 format=3 uid="uid://suod22dv6581"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_ndnxt"]
 [ext_resource type="Texture2D" uid="uid://tqtb6gctnvfr" path="res://Sprites/clam2.png" id="2_vl127"]
 [ext_resource type="Script" path="res://Scripts/Movement.gd" id="3_d36fh"]
+[ext_resource type="Script" path="res://Scripts/CollisionCheck.gd" id="4_hr4in"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2cbde"]
 radius = 40.0
@@ -12,15 +13,17 @@ script = ExtResource("1_ndnxt")
 movement = NodePath("Movement")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-3.8147e-06, 0.5)
 scale = Vector2(0.586387, 0.729167)
 texture = ExtResource("2_vl127")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
 shape = SubResource("CircleShape2D_2cbde")
 
 [node name="Movement" type="Node2D" parent="." node_paths=PackedStringArray("characterBody2D")]
 script = ExtResource("3_d36fh")
 speedMult = 200
 characterBody2D = NodePath("..")
+
+[node name="CollisionCheck" type="Node2D" parent="."]
+script = ExtResource("4_hr4in")
+entityType = "player"

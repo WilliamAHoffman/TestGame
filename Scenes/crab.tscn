@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://edxff0wwpd0m"]
+[gd_scene load_steps=6 format=3 uid="uid://edxff0wwpd0m"]
 
 [ext_resource type="Script" path="res://Scripts/crab.gd" id="1_13yix"]
 [ext_resource type="Texture2D" uid="uid://csp6acbdiwun2" path="res://Sprites/crab.png" id="1_lg6v3"]
 [ext_resource type="Script" path="res://Scripts/Movement.gd" id="3_o7bqw"]
+[ext_resource type="Script" path="res://Scripts/CollisionCheck.gd" id="4_vfx8g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uo08c"]
 radius = 63.0
@@ -22,3 +23,7 @@ shape = SubResource("CircleShape2D_uo08c")
 script = ExtResource("3_o7bqw")
 speedMult = 100
 characterBody2D = NodePath("..")
+
+[node name="CollisionCheck" type="Node2D" parent="."]
+script = ExtResource("4_vfx8g")
+entityType = "enemy"
