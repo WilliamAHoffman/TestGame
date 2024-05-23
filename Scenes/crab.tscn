@@ -1,22 +1,21 @@
 [gd_scene load_steps=5 format=3 uid="uid://edxff0wwpd0m"]
 
-[ext_resource type="Script" path="res://Scenes/crab.gd" id="1_jwrw5"]
+[ext_resource type="Script" path="res://Scripts/crab.gd" id="1_13yix"]
 [ext_resource type="Texture2D" uid="uid://csp6acbdiwun2" path="res://Sprites/crab.png" id="1_lg6v3"]
 [ext_resource type="Script" path="res://Scripts/Movement.gd" id="3_o7bqw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uo08c"]
-radius = 63.0079
+radius = 63.0
 
 [node name="Crab" type="CharacterBody2D" node_paths=PackedStringArray("movement")]
-script = ExtResource("1_jwrw5")
+script = ExtResource("1_13yix")
 movement = NodePath("Movement")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CrabSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.27038, 0.255793)
 texture = ExtResource("1_lg6v3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 0)
 shape = SubResource("CircleShape2D_uo08c")
 
 [node name="Movement" type="Node2D" parent="." node_paths=PackedStringArray("characterBody2D")]

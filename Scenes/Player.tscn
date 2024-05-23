@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Scripts/Movement.gd" id="3_d36fh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2cbde"]
-radius = 38.71
+radius = 40.0
 
 [node name="ClamPlayer" type="CharacterBody2D" node_paths=PackedStringArray("movement")]
 script = ExtResource("1_ndnxt")
