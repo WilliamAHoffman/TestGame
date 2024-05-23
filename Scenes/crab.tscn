@@ -13,6 +13,7 @@ script = ExtResource("1_13yix")
 movement = NodePath("Movement")
 
 [node name="CrabSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -17)
 scale = Vector2(0.27038, 0.255793)
 texture = ExtResource("1_lg6v3")
 
@@ -21,7 +22,7 @@ shape = SubResource("CircleShape2D_uo08c")
 
 [node name="Movement" type="Node2D" parent="." node_paths=PackedStringArray("characterBody2D")]
 script = ExtResource("3_o7bqw")
-speedMult = 100
+speed = 200
 characterBody2D = NodePath("..")
 
 [node name="CollisionCheck" type="Node2D" parent="."]

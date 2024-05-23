@@ -8,9 +8,11 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_2cbde"]
 radius = 40.0
 
-[node name="ClamPlayer" type="CharacterBody2D" node_paths=PackedStringArray("movement")]
+[node name="ClamPlayer" type="CharacterBody2D" node_paths=PackedStringArray("movement", "dashTimer")]
 script = ExtResource("1_ndnxt")
 movement = NodePath("Movement")
+dashTimer = NodePath("DashTimer")
+dashLength = 0.7
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.586387, 0.729167)
@@ -21,9 +23,14 @@ shape = SubResource("CircleShape2D_2cbde")
 
 [node name="Movement" type="Node2D" parent="." node_paths=PackedStringArray("characterBody2D")]
 script = ExtResource("3_d36fh")
-speedMult = 200
+speed = 200
 characterBody2D = NodePath("..")
+dashSpeed = 600
 
 [node name="CollisionCheck" type="Node2D" parent="."]
 script = ExtResource("4_hr4in")
 entityType = "player"
+
+[node name="DashTimer" type="Timer" parent="."]
+process_mode = 3
+one_shot = true
